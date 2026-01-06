@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhanush Shankar H M | Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #e5e7eb;
+      line-height: 1.6;
+      background: url("Screenshot 2026-01-02 130753.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HEADER / HERO ===== */
+    header {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
+      url("https://thumbs.dreamstime.com/b/dark-red-black-data-analytics-dashboard-computer-screen-365310565.jpg") no-repeat center center;
+      background-size: cover;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 60px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: hsl(280, 20%, 97%);
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #c7d2fe;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .hero-title {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+
+    .hero-title h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .hero-title p {
+      margin-top: 10px;
+      font-size: 1.3rem;
+      color: #93c5fd;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 80px 10%;
+      background: rgba(2, 6, 23, 0.85);
+    }
+
+    section h2 {
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      color: #60a5fa;
+    }
+
+    /* ABOUT */
+    .about p {
+      max-width: 900px;
+      font-size: 1.1rem;
+    }
+
+    /* PROJECTS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #020617;
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #bfdbfe;
+    }
+
+      /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      column-gap: 50px;
+      row-gap: 80px;
+      padding: 40px 0;
+    }
+
+    .skill {
+      background: #020617;
+      padding: 22px;
+      margin: 25px;
+      text-align: center;
+      border-radius: 14px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    /* CONTACT */
+    .contact p {
+      margin-bottom: 14px;
+      font-size: 1.1rem;
+    }
+
+    .contact a {
+      color: #60a5fa;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #020617;
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 768px) {
+
+  .top-bar {
+    flex-direction: column;
+    padding: 15px;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .top-bar img {
+    height: 70px !important;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-title {
+    position: relative;
+    transform: none;
+    padding: 120px 15px 60px;
+  }
+
+  .hero-title h1 {
+    font-size: 2rem;
+  }
+
+  .hero-title p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 50px 20px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .skills {
+    gap: 25px;
+  }
+
+  .skill {
+    padding: 25px;
+  }
+}
+
+
+       
+
+      
+  </style>
+</head>
+<body>
+<!-- Image Modal -->
+<div id="imageModal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;">
+  <span style="position:absolute;top:20px;right:40px;font-size:40px;color:white;cursor:pointer;" onclick="closeImage()">&times;</span>
+  <img id="modalImg" style="max-width:90%;max-height:90%;border-radius:10px;">
+</div>
+
+
+
+  <!-- HERO / HEADER -->
+  <header id="home">
+  <!-- Background Video -->
+  <video autoplay muted loop id="bgVideo" style="position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;">
+    <source src="c:\Users\Deeks\Downloads\portfolio\Background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <!-- Top Bar: Logo + Name (Left) / Nav (Right) -->
+  <div class="top-bar">
+  <img src="https://cdn.prod.website-files.com/5ff3b1963c457a72f88616e6/65702e069efac79b49e9d476_image%20(4).png" alt="Dhanush Shankar Logo" style="height:200px;cursor:pointer;" onclick="openImage(this.src)">
+  <div>
+  <div class="logo">DHANUSH SHANKAR H M <br> Data Analyst</div>
+    </div>
+
+    <!-- Right side: Navigation -->
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Hero Section Text -->
+  <div class="hero-title">
+    <h1>Data Analyst</h1>
+    <p>Turning Data into Business Insights</p>
+  </div>
+</header>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I am a dedicated Data Analyst with strong expertise in Excel, Power BI, SQL, Tableau, Python, and Statistics. 
+      I specialize in data cleaning, analysis, visualization, and storytelling to help organizations make data-driven decisions.
+    </p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <a href="c:\Users\Deeks\Downloads\portfolio\Global E Commerce dashboard.pbix" target="_blank" class="card">
+        <h3>Sales Analysis Dashboard</h3>
+        <p>Interactive Power BI dashboard analyzing sales trends, YoY     growth,and regional performance.</p>
+        </a>
+      </div>
+     
+      <div class="card">
+            <a href="c:\Users\Deeks\Downloads\portfolio\Employee Attrition SQL+PBI.pbix"target="_blank" class="card">
+        <h3>HR Analytics</h3>
+        <p>                 Employee attrition and performance analysis using  Power BI.</p>
+        </a>
+      </div>
+     
+    </div>
+  </section>
+
+  <section id="skills">
+  <h2>Skills</h2>
+
+  <div class="skills"></div>
+
+    <div class="skill">
+      <h3>Excel</h3>
+      <p>Data Cleaning, Pivot Tables, Advanced Formulas, Power Query, Dashboard Creation</p> 
+      <img src= "c:\Users\Deeks\Downloads\portfolio\Screenshot 2026-01-03 093233.png" class="skill-icon" onclick="openImage(this.src)" style="width:60px;cursor:pointer;" alt="Excel Icon"> 
+    </div>
+
+    <div class="skill">
+      <h3>Power BI</h3>
+      <p>Data Modeling, DAX, Interactive Dashboards</p>
+      <img src="c:\Users\Deeks\Downloads\portfolio\Screenshot 2026-01-02 130753.png" class="skill-icon" onclick="openImage(this.src)" style="width:60px;cursor:pointer;" alt="Power BI Icon">
+    </div>
+
+    <div class="skill">
+      <h3>SQL</h3>
+      <p>Data Extraction, Joins, Aggregations, Query Optimization</p>
+      <img src="c:\Users\Deeks\Downloads\portfolio\Screenshot 2026-01-03 093355.png" class="skill-icon" onclick="openImage(this.src)" style="width:60px;cursor:pointer;" alt="SQL Icon">
+    </div>
+
+    <div class="skill">
+      <h3>Tableau</h3>
+      <p>Data Visualization, Interactive Dashboards</p>
+      <img src="c:\Users\Deeks\Downloads\portfolio\Screenshot 2026-01-03 093654.png" class="skill-icon" onclick="openImage(this.src)" style="width:60px;cursor:pointer;" alt="Tableau Icon">
+    </div>
+
+    <div class="skill">
+      <h3>Python</h3>
+      <p>Data Analysis, Automation, EDA, Data Visualization</p>
+      <img src="c:\Users\Deeks\Downloads\portfolio\Screenshot 2026-01-03 100200.png" class="skill-icon" onclick="openImage(this.src)" style="width:60px;cursor:pointer;" alt="Python Icon">
+    </div>
+
+    <div class="skill">
+      <h3>Statistics</h3>
+      <p>Data Interpretation, Trend Analysis, Hypothesis Testing</p>
+      <img src="c:\Users\Deeks\Downloads\portfolio\Screenshot 2026-01-03 100200.png" class="skill-icon" onclick="openImage(this.src)" style="width:60px;cursor:pointer;" alt="Statistics Icon">
+    </div>
+
+  </div>
+</section>
+
+  
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+  <h2>Contact</h2>
+
+  
+  <!-- Your other contact info -->
+  <p>Email: <a href="mailto:dhanushshankar025@gmail.com">dhanushshankar025@gmail.com</a></p>
+  <p>Phone: +91-XXXXXXXXXX</p>
+  <p>GitHub: <a href="https://github.com/dhanushshankar025-cpu" target="_blank">dhanushshankar025-cpu</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/dhshankar9" target="_blank">linkedin.com/in/dhshankar9</a></p>
+</section>
+
+  <footer>
+    © 2026 Dhanush Shankar H M | Data Analyst Portfolio
+  </footer>
+<script>
+  function openImage(src){
+    document.getElementById('modalImg').src = src;
+    document.getElementById('imageModal').style.display = 'flex';
+  }
+  function closeImage(){
+    document.getElementById('imageModal').style.display = 'none';
+  }
+</script>
+
+<script>
+function openVideo(videoElement){
+  const modal = document.getElementById('videoModal');
+  const modalVideo = document.getElementById('modalVideo');
+
+  modalVideo.src = videoElement.querySelector('source').src;
+  modal.style.display = 'flex';
+  modalVideo.play();
+}
+
+function closeVideo(){
+  const modal = document.getElementById('videoModal');
+  const modalVideo = document.getElementById('modalVideo');
+
+  modalVideo.pause();
+  modalVideo.src = "";
+  modal.style.display = 'none';
+}
+</script>
+
+
+</body>
+</html>
